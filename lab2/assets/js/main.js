@@ -1,8 +1,11 @@
-var app = angular.module("lab2", []);
+var app = angular.module("lab2", ['ngMaterial']);
 
 app.controller("lab2controller", function($scope) {
 	$scope.app = "Lab 2";
 	$scope.tarefas = [
+		{ descricao: 'asdasdasd', concluido: false},
+    { descricao: 'ijnkhnhnhnnhk', concluido: false },
+    { descricao: 'asdasdyh', concluido: false }
 	];
 
 	$scope.adicionarTarefa = function (tarefa) {

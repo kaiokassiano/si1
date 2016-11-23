@@ -3,40 +3,58 @@
 <head>
 	<title>Lab 2</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width"/>
 	
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="lib/material-design/material.css">
+	<link rel="stylesheet" href="lib/angular-material.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-	<script src="lib/angular.min.js"></script>
-	<script src="lib/material-design/material.js"></script>
-	<script src="assets/js/main.js"></script>
 
 </head>
 <body ng-controller="lab2controller as controller">
 
-	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">Todo List</h2>
-		</div>
+	<!--<div class="demo-card-wide mdl-card mdl-shadow&#45;&#45;2dp">-->
+		<!--<div class="mdl-card__title">-->
+			<!--<h2 class="mdl-card__title-text">Todo List</h2>-->
+		<!--</div>-->
 
-		<div class="mdl-textfield mdl-js-textfield">
-			<input class="mdl-textfield__input" ng-model="tarefa.descricao" placeholder="Descrição da atividade" type="text">
-			<label class="mdl-textfield__label" for="sample1"></label>
-		</div>
-		<!-- ng-repeat="tarefa in tarefas track by $index" -->
-		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" ng-click="adicionarTarefa(tarefa)">Adicionar tarefa</button><br><br><br>
+		<!--<div class="mdl-textfield mdl-js-textfield">-->
+			<!--<input class="mdl-textfield__input" ng-model="tarefa.descricao" placeholder="Descrição da atividade" type="text">-->
+			<!--<label class="mdl-textfield__label" for="sample1"></label>-->
+		<!--</div>-->
+		<!--&lt;!&ndash; ng-repeat="tarefa in tarefas track by $index" &ndash;&gt;-->
+		<!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;colored" ng-click="adicionarTarefa(tarefa)">Adicionar tarefa</button><br><br><br>-->
 
-		<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-			<tbody>
-				<tr ng-repeat="tarefa in tarefas track by $index">
-					<td class="mdl-data-table__cell--non-numeric">{{ tarefa.descricao }}</td>
-				</tr>
-			</tbody>
-		</table>
-		<br>
+		<!--<table class="mdl-data-table mdl-js-data-table mdl-data-table&#45;&#45;selectable mdl-shadow&#45;&#45;2dp">-->
+			<!--<thead>-->
+				<!--<tr>-->
+					<!--<th class="mdl-data-table__cell&#45;&#45;non-numeric">Material</th>-->
+				<!--</tr>-->
+			<!--</thead>-->
+			<!--<tbody>-->
+				<!--<tr ng-repeat="tarefa in tarefas track by $index">-->
+					<!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">{{ tarefa.descricao }}</td>-->
+				<!--</tr>-->
+			<!--</tbody>-->
+		<!--</table>-->
+		<!--<br>-->
 
-	</div>
+	<!--</div>-->
 
+	<md-card>
+		<md-card-header>
+			<md-input-container>
+				<input type="text" ng-model="titulo" placeholder="Descrição da tarefa">
+				<md-button>Adicionar todo</md-button>
+			</md-input-container>
+		</md-card-header>
+	</md-card>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+	<script src="assets/js/main.js"></script>
 </body>
 </html>

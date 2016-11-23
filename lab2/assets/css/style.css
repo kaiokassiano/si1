@@ -20,7 +20,8 @@
 }
 
 .mdl-card {
-	width: 900px;
+	max-width: 900px;
+	width: auto;
 	margin-top: 20px;
 	margin-right: auto;
 	margin-left: auto;
