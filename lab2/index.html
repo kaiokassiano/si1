@@ -2,7 +2,7 @@
 <html ng-app="lab2">
 <head>
 	<title>Lab 2</title>
-
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
 	
@@ -11,8 +11,23 @@
 
 </head>
 <body ng-controller="lab2controller as controller">
+	<h3 style="text-align: center;">ToDo List</h3>
+
 	<div class="jumbotron">
+
+		<table class="table table-striped">
+			<tr ng-repeat="tarefa in tarefas track by $index">
+				<td>{{tarefa.descricao}}</td>
+			</tr>
+		</table>
 		
+		<hr>
+		</br>
+
+		<input class="form-control" type="text" ng-model="tarefa.descricao" placeholder="Descrição da tarefa"/>
+		</br>
+		<button class="btn btn-primary" ng-click="adicionarTarefa(tarefa)">Adicionar tarefa</button>
+
 	</div>
 </body>
 </html>
