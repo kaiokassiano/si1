@@ -1,14 +1,26 @@
 .jumbotron {
+	background:transparent !important;
 	width: 1200px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
-	box-shadow: 0 8px 20px -7px black;
+	box-shadow: 0.5px 0.5px 2px black;
 }
 
-.form-control {
-	width: 50% !important;
-	margin-left: auto;
+.mdl-textfield__input {
 	margin-right: auto;
+	margin-left: auto;
+}
+
+.mdl-card {
+	width: 1200px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.mdl-button {
+	margin-right: auto;
+	margin-left: auto;
 }

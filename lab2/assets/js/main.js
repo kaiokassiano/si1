@@ -6,7 +6,7 @@ app.controller("lab2controller", function($scope) {
 	];
 
 	$scope.adicionarTarefa = function (tarefa) {
-		if (tarefa != "") {
+		if (tarefa !== undefined) {
 			$scope.tarefas.push(angular.copy(tarefa));
 			delete $scope.tarefa;
 		}
