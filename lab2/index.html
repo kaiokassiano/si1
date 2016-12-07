@@ -38,8 +38,9 @@
 	<md-card>
 		<md-card-header>
 			<md-input-container>
-				<input type="text" ng-model="titulo" placeholder="Descrição da tarefa">
-				<md-button class="md-raised md-primary" ng-click="">Adicionar todo</md-button>
+				<input type="text" ng-model="item.descricao" placeholder="Descrição da tarefa">
+				<md-button class="md-raised md-primary" ng-click="adicionarTarefa(item)" ng-disabled="!item.descricao">Adicionar todo</md-button>
+				{{tarefa.descricao}}
 			</md-input-container>
 		</md-card-header>
 
@@ -66,7 +67,7 @@
 			</div>
 	</md-card>
 
-	<!--Colocados no fim do documento para carregamento mais rapido-->
+	<!--Colocados no fim do documento para carregamento mais rapido da pagina-->
 	<script src="lib/angular.min.js"></script>
 	<script src="lib/angular-material.min.js"></script>
 	<script src="lib/angular-animate.min.js"></script>

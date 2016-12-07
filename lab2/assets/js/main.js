@@ -5,16 +5,18 @@ app.controller("lab2controller", function ($scope) {
 
 	$scope.tarefas = [{
 		descricao: 'Levar o cachorro pra passear',
-		concluido: false
 	}, {
 		descricao: 'Estudar lógica',
-		concluido: false
 	}, {
 		descricao: 'Terminar o Lab de SI',
-		concluido: false
 	}];
 
 	$scope.tarefasSelecionadas = [];
+
+	$scope.adicionarTarefa = function(tarefa) {
+		$scope.tarefas.push(angular.copy(tarefa));
+		delete $scope.contato;
+	};
 
 	$scope.toggle = function (item, list) {
 		var idx = list.indexOf(item);
