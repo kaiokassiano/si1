@@ -1,5 +1,5 @@
 .jumbotron {
-	background:transparent !important;
+	background: transparent !important;
 	width: 1200px;
 	text-align: center;
 	margin-left: auto;
@@ -35,4 +35,33 @@
 .mdl-data-table {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.checkboxdemoSelectAll .demo-legend {
+	color: #3F51B5;
+}
+
+.checkboxdemoSelectAll .demo-fieldset {
+	border-style: solid;
+	border-width: 1px;
+	height: 100%;
+}
+
+.checkboxdemoSelectAll .demo-select-all-checkboxes {
+	padding-left: 30px;
+}
+
+.addButton {
+	padding: 0 6px 0 6px;
+	margin: 6px 8px 6px 8px;
+	color: currentColor;
+	background-color: rgba(158, 158, 158, 0.2);
+	min-width: 88px;
+	border-radius: 3px;
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: none;
+	outline: none;
 }
