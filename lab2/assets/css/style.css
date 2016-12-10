@@ -1,67 +1,15 @@
-.jumbotron {
-	background: transparent !important;
-	width: 1200px;
+.md-display-2 {
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	box-shadow: 0.5px 0.5px 2px black;
+	background: #00695C
 }
 
-.mdl-card__title-text {
-	margin-left: auto;
-	margin-right: auto;
+.progress-bar {
+	background: #00C343;
 }
 
-.mdl-textfield {
-	width: 600px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.mdl-card {
-	max-width: 900px;
-	width: auto;
-	margin-top: 20px;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.mdl-button {
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.mdl-data-table {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.checkboxdemoSelectAll .demo-legend {
-	color: #3F51B5;
-}
-
-.checkboxdemoSelectAll .demo-fieldset {
-	border-style: solid;
-	border-width: 1px;
-	height: 100%;
-}
-
-.checkboxdemoSelectAll .demo-select-all-checkboxes {
-	padding-left: 30px;
-}
-
-.addButton {
-	padding: 0 6px 0 6px;
-	margin: 6px 8px 6px 8px;
-	color: currentColor;
-	background-color: rgba(158, 158, 158, 0.2);
-	min-width: 88px;
-	border-radius: 3px;
-	font-size: 14px;
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-	border: none;
-	outline: none;
+.md-card {
+	background: #ECEFF1 !important;
 }

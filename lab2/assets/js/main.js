@@ -13,9 +13,9 @@ app.controller("lab2controller", function ($scope) {
 
 	$scope.tarefasSelecionadas = [];
 
-	$scope.adicionarTarefa = function(tarefa) {
+	$scope.adicionarTarefa = function (tarefa) {
 		$scope.tarefas.push(angular.copy(tarefa));
-		delete $scope.contato;
+		delete $scope.item;
 	};
 
 	$scope.toggle = function (item, list) {
@@ -46,5 +46,21 @@ app.controller("lab2controller", function ($scope) {
 		} else if ($scope.tarefasSelecionadas.length === 0 || $scope.tarefasSelecionadas.length > 0) {
 			$scope.tarefasSelecionadas = $scope.tarefas.slice(0);
 		}
+	};
+
+	$scope.removeItem = function (item) {
+		var index = $scope.tarefas.indexOf(item);
+		if (index > -1) {
+			$scope.tarefas.splice(index, 1);
+		}
+		var index = $scope.tarefasSelecionadas.indexOf(item);
+		if (index > -1) {
+			$scope.tarefasSelecionadas.splice(index, 1);
+		}
+		$scope.actualPercentage();
+	};
+
+	$scope.actualPercentage = function () {
+		return (($scope.tarefasSelecionadas.length) / ($scope.tarefas.length || 1) * 100).toFixed(0);
 	};
 });

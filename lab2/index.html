@@ -5,74 +5,93 @@
 	<title>Lab 2</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width" />
-	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" href="lib/angular-material.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/angular/angular-material.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body ng-controller="lab2controller as controller">
-	<!--<div class="demo-card-wide mdl-card mdl-shadow&#45;&#45;2dp">-->
-	<!--<div class="mdl-card__title">-->
-	<!--<h2 class="mdl-card__title-text">Todo List</h2>-->
-	<!--</div>-->
-	<!--<div class="mdl-textfield mdl-js-textfield">-->
-	<!--<input class="mdl-textfield__input" ng-model="tarefa.descricao" placeholder="Descrição da atividade" type="text">-->
-	<!--<label class="mdl-textfield__label" for="sample1"></label>-->
-	<!--</div>-->
-	<!--&lt;!&ndash; ng-repeat="tarefa in tarefas track by $index" &ndash;&gt;-->
-	<!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;colored" ng-click="adicionarTarefa(tarefa)">Adicionar tarefa</button><br><br><br>-->
-	<!--<table class="mdl-data-table mdl-js-data-table mdl-data-table&#45;&#45;selectable mdl-shadow&#45;&#45;2dp">-->
-	<!--<thead>-->
-	<!--<tr>-->
-	<!--<th class="mdl-data-table__cell&#45;&#45;non-numeric">Material</th>-->
-	<!--</tr>-->
-	<!--</thead>-->
-	<!--<tbody>-->
-	<!--<tr ng-repeat="tarefa in tarefas track by $index">-->
-	<!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">{{ tarefa.descricao }}</td>-->
-	<!--</tr>-->
-	<!--</tbody>-->
-	<!--</table>-->
-	<!--<br>-->
-	<!--</div>-->
 	<md-card>
-		<md-card-header>
-			<md-input-container>
-				<input type="text" ng-model="item.descricao" placeholder="Descrição da tarefa">
-				<md-button class="md-raised md-primary" ng-click="adicionarTarefa(item)" ng-disabled="!item.descricao">Adicionar todo</md-button>
-				{{tarefa.descricao}}
-			</md-input-container>
-		</md-card-header>
-
-		<div class="md-padding demo">
-			<div layout="row" layout-wrap>
-				<div flex="100" layout="column">
-					<div>
-						<fieldset class="demo-fieldset">
-							<div layout="row" layout-wrap flex>
-								<div flex-xs flex="50">
-									<md-checkbox aria-label="Selecionar todas" ng-checked="isChecked()" md-indeterminate="isIndeterminate()" ng-click="toggleAll()">
-										<span ng-if="isChecked()">Des-</span>Selecionar todas
-									</md-checkbox>
-								</div>
-								<div class="demo-select-all-checkboxes" flex="100" style="padding-left:2em" ng-repeat="item in tarefas">
-									<md-checkbox ng-checked="exists(item, tarefasSelecionadas)" ng-click="toggle(item, tarefasSelecionadas)">
-										{{ item.descricao }}
-									</md-checkbox>
+		<div ng-cloak>
+			<md-content>
+				<md-tabs md-dynamic-height md-border-bottom>
+					<md-tab label="principal">
+						<md-content class="md-padding">
+							<h1 class="md-display-2">Todo List</h1>
+							<br>
+							<br>
+							<div class="container">
+								<p style="text-align: center">Progresso total</p>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" aria-valuenow="{{actualPercentage()}}" aria-valuemin="0" aria-valuemax="100"
+													style="width: {{actualPercentage()}}%">
+										{{actualPercentage()}}%
+									</div>
 								</div>
 							</div>
-						</fieldset>
-					</div>
-				</div>
+							<md-card-header>
+								<md-input-container>
+									<input type="text" ng-model="item.descricao" placeholder="Descrição da tarefa">
+									<md-button class="md-raised md-primary" ng-click="adicionarTarefa(item)" ng-disabled="!item.descricao">Adicionar todo</md-button>
+									{{tarefa.descricao}}
+								</md-input-container>
+							</md-card-header>
+							<div class="md-padding demo">
+								<div layout="row" layout-wrap>
+									<div flex="100" layout="column">
+										<div>
+											<fieldset class="demo-fieldset">
+												<div layout="row" layout-wrap flex>
+													<div flex-xs flex="50">
+														<md-checkbox aria-label="Selecionar todas" ng-checked="isChecked()" md-indeterminate="isIndeterminate()" ng-click="toggleAll()">
+															<span ng-if="isChecked()"></span>Selecionar todas
+														</md-checkbox>
+													</div>
+													<div class="demo-select-all-checkboxes" flex="100" style="padding-left:2em" ng-repeat="item in tarefas">
+														<md-checkbox aria-label="aa" ng-checked="exists(item, tarefasSelecionadas)" ng-click="toggle(item, tarefasSelecionadas)"></md-checkbox>
+														{{ item.descricao }}
+														<button class="glyphicon glyphicon-trash" ng-click="removeItem(item)"></button>
+													</div>
+												</div>
+											</fieldset>
+										</div>
+									</div>
+								</div>
+						</md-content>
+					</md-tab>
+					<md-tab label="sobre">
+						<md-content class="md-padding">
+							<h1 class="md-display-2">Sobre</h1>
+							<br>
+							<h2>Sobre mim</h2>
+							<p style="text-align: justify;">&nbsp &nbsp &nbspKaio Kassiano Moura Oliveira nasceu em Campina Grande, no estado da Paraíba, Brasil. Graduando do curso de Ciência da Computação pela Universidade Federal de Campina Grande, participou do VII Hackfest Contra a Corrupção, realizado pelo Ministério Público da Paraíba em parceria com a Universidade Federal de Campina Grande e o Laboratório Analytics. Foi bolsista do Programa de Educação Tutorial (PET) Computação durante 8 meses. Atualmente, é bolsista e desenvolvedor no Laboratório de Práticas de Software (SPLab), e integrante do Grupo Guardians-DSC. Tem interesse nas áreas de Engenharia de Software, Administração de Sistemas, Sistemas Distribuídos, Desenvolvimento Web.</p>
+							<br>
+							<h2>Links úteis</h2>
+							<hr>
+							<a target="_blank" href="http://github.com/kaiokassiano">github</a><br>
+							<a target="_blank" href="http://lattes.cnpq.br/2823303331057543">lattes</a><br>
+							<a target="_blank" href="http://www.linkedin.com/in/kaiokassiano">linkedin</a><br>
+						</md-content>
+					</md-tab>
+					<!--md-tab label="three">
+						<md-content class="md-padding">
+							<h1 class="md-display-2">Tab Three</h1>
+							<p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi
+								eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed
+								id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+						</md-content>
+					</md-tab -->
+				</md-tabs>
+			</md-content>
 			</div>
 	</md-card>
-
 	<!--Colocados no fim do documento para carregamento mais rapido da pagina-->
-	<script src="lib/angular.min.js"></script>
-	<script src="lib/angular-material.min.js"></script>
-	<script src="lib/angular-animate.min.js"></script>
-	<script src="lib/angular-aria.min.js"></script>
-	<script src="lib/angular-messages.min.js"></script>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/angular/angular-material.min.js"></script>
+	<script src="lib/angular/angular-animate.min.js"></script>
+	<script src="lib/angular/angular-aria.min.js"></script>
+	<script src="lib/angular/angular-messages.min.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
+
 </html>
